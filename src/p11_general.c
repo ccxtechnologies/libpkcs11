@@ -102,13 +102,13 @@ CK_RV C_GetInfo(CK_INFO_PTR pInfo)
 		cryptoki_info.cryptokiVersion.minor = CRYPTOKI_VERSION_MINOR;
 
 		memset(cryptoki_info.manufacturerID, ' ', sizeof(cryptoki_info.manufacturerID));
-		strncpy((char *)cryptoki_info.manufacturerID, "NXP", strlen("NXP"));
+		strncpy((char *)cryptoki_info.manufacturerID, "NXP", strlen("NXP") + 1);
 
 		cryptoki_info.flags = 0;
 
 		memset(cryptoki_info.libraryDescription, ' ', sizeof(cryptoki_info.libraryDescription));
 		strncpy((char *)cryptoki_info.libraryDescription, "libpkcs11",
-			strlen("libpkcs11"));
+			strlen("libpkcs11") + 1);
 
 		cryptoki_info.libraryVersion.major = 1;
 		cryptoki_info.libraryVersion.minor = 0;
@@ -197,7 +197,7 @@ CK_RV C_GetFunctionList(CK_FUNCTION_LIST_PTR_PTR ppFunctionList)
 	global_function_list.C_CancelFunction  =	C_CancelFunction;
 	global_function_list.C_WaitForSlotEvent  =	C_WaitForSlotEvent;
 	*ppFunctionList = &global_function_list;
- 
+
 	return CKR_OK;
 }
 

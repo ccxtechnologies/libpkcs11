@@ -157,10 +157,10 @@ CK_RV Get_TEE_SlotInfo(CK_SLOT_INFO_PTR pInfo)
 {
 	memset(pInfo->slotDescription, ' ', sizeof(pInfo->slotDescription));
 	strncpy((char *)pInfo->slotDescription, "TEE_BASED_SLOT",
-		strlen("TEE_BASED_SLOT"));
+		strlen("TEE_BASED_SLOT") + 1);
 
 	memset(pInfo->manufacturerID, ' ', sizeof(pInfo->manufacturerID));
-	strncpy((char *)pInfo->manufacturerID, "NXP", strlen("NXP"));
+	strncpy((char *)pInfo->manufacturerID, "NXP", strlen("NXP") + 1);
 
 	pInfo->flags = CKF_TOKEN_PRESENT;
 	pInfo->hardwareVersion.major = 0;
@@ -175,17 +175,17 @@ CK_RV Get_TEE_TokenInfo(CK_TOKEN_INFO_PTR pInfo)
 {
 	memset(pInfo->label, ' ', sizeof(pInfo->label));
 	strncpy((char *)pInfo->label, "TEE_BASED_TOKEN",
-		strlen("TEE_BASED_TOKEN"));
+		strlen("TEE_BASED_TOKEN") + 1);
 
 	memset(pInfo->manufacturerID, ' ', sizeof(pInfo->manufacturerID));
-	strncpy((char *)pInfo->manufacturerID, "NXP", strlen("NXP"));
+	strncpy((char *)pInfo->manufacturerID, "NXP", strlen("NXP") + 1);
 
 	memset(pInfo->model, ' ', sizeof(pInfo->model));
 	strncpy((char *)pInfo->model, "PKCS11-OP-TEE",
-		strlen("PKCS11-OP-TEE"));
+		strlen("PKCS11-OP-TEE") + 1);
 
 	memset(pInfo->serialNumber, ' ', sizeof(pInfo->serialNumber));
-	strncpy((char *)pInfo->serialNumber, "1", strlen("1"));
+	strncpy((char *)pInfo->serialNumber, "1", strlen("1") + 1);
 
 	pInfo->flags = 0;
 	pInfo->ulMaxSessionCount = 10;
