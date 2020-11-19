@@ -20,7 +20,7 @@
 #include <sched.h>
 #include <pthread.h>
 
-CK_FUNCTION_LIST  *funcs;
+static CK_FUNCTION_LIST  *funcs;
 
 #define err2str(X)     case X: return #X
 #define MAX_THREADS	10

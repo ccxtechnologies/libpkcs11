@@ -20,7 +20,7 @@
 #include <openssl/pem.h>
 #include "utils.h"
 
-CK_FUNCTION_LIST  *funcs;
+static CK_FUNCTION_LIST  *funcs;
 
 struct getOptValue_t {
 	uint32_t main_option;

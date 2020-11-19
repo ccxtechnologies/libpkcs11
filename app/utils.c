@@ -15,7 +15,7 @@
 #include <tee_slot.h>
 #include "utils.h"
 
-CK_FUNCTION_LIST  *funcs;
+static CK_FUNCTION_LIST  *funcs;
 
 #define err2str(X)     case X: return #X
 
