@@ -2066,8 +2066,8 @@ template_destroy_template_list(struct template_list *template)
 	while ((t = STAILQ_FIRST(tmpl_list)) != NULL ) {
 		if (t->attributes)
 			free(t->attributes);
-			STAILQ_REMOVE(tmpl_list, t, template_node, entry);
-			free(t);
+		STAILQ_REMOVE(tmpl_list, t, template_node, entry);
+		free(t);
 	}
 
 	return rc;
